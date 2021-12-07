@@ -18,7 +18,7 @@
         <div class="titleBox"></div>
         <!--    登录的div-->
         <div class="login_box">
-            <form class="layui-form" action="">
+            <form class="layui-form" id="form_login">
                 <!--            用户名-->
                 <div class="layui-form-item">
                     <i class="layui-icon layui-icon-username"></i>
@@ -31,7 +31,7 @@
                 </div>
                 <!--            登录按钮-->
                 <div class="layui-form-item">
-                    <button class="layui-btn layui-btn-fluid layui-btn-normal" lay-submit>登录</button>
+                    <button class="layui-btn layui-btn-fluid layui-btn-normal" lay-submit lay-filter='login'>登录</button>
                 </div>
                 <div class="layui-form-item links">
                     <a href="javascript:;" id="link_reg">去注册账号</a>
@@ -72,8 +72,9 @@
     <script src="/assets/lib/layui/layui.all.js"></script>
     <!-- 导入 JQuery -->
     <script src="/assets/lib/jquery.js"></script>
+    <script src="/assets/js/baseAPI.js"></script>
     <!--导入自己的js脚本-->
-    <script src="./assets/js/login.js"></script>
+    <script src="/assets/js/login.js"></script>
 </body>
 
 </html>
