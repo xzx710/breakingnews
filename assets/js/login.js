@@ -11,6 +11,7 @@ $(function() {
     });
     // 自定义layui验证规则
     var form = layui.form;
+    var layer = layui.layer;
     form.verify({
         username: function(value) {
             //value：表单的值、item：表单的DOM对象
@@ -46,14 +47,29 @@ $(function() {
     // 监听注册表单的提交事件
     form.on('submit(register)', function(data) {
         $.post(
-            'http://localhost:8080/api/register', {
+            '/api/register', {
                 username: data.field.username,
                 password: data.field.password,
             },
             function(res) {
-                if (res.status !== 0) return console.log(res.message);
-                return console.log('注册成功！');
+                if (res.status !== 0) return layer.msg(res.message);
+                layer.msg('注册成功，请登录！');
+                // 模拟人的点击行为返回登录页面
+                $('#link_login').click();
             }
         );
+        return false;
+    });
+
+    // 监听登录表单的提交事件
+    form.on('submit(login)', function(data) {
+        $.post('/api/login', date.field, function(res) {
+            if (res.status !== 0) return layer.msg(res.message);
+            layer.msg('登录成功！');
+            // 将登录得到的token字符串，保存到localStorage中
+            localStorage.setItem('token', res.token);
+            location.href = './index.html';
+        });
+        return false;
     });
 });
