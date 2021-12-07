@@ -10,8 +10,8 @@ $(function() {
         $('.login_box').show();
     });
     // 自定义layui验证规则
-    var form = layui.form;
-    var layer = layui.layer;
+    const form = layui.form;
+    const layer = layui.layer;
     form.verify({
         username: function(value) {
             //value：表单的值、item：表单的DOM对象
@@ -63,7 +63,7 @@ $(function() {
 
     // 监听登录表单的提交事件
     form.on('submit(login)', function(data) {
-        $.post('/api/login', date.field, function(res) {
+        $.post('/api/login', data.field, function(res) {
             if (res.status !== 0) return layer.msg(res.message);
             layer.msg('登录成功！');
             // 将登录得到的token字符串，保存到localStorage中
