@@ -17,9 +17,10 @@
 
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item layui-hide layui-show-md-inline-block">
-                <a href="javascript:;">
+                <a href="javascript:;" class="userinfo">
                     <img src="//tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg"
                          class="layui-nav-img">
+                    <span class="text-avatar">A</span>
                     个人中心
                 </a>
                 <dl class="layui-nav-child">
@@ -29,7 +30,7 @@
                 </dl>
             </li>
             <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
-                <a href="javascript:;">
+                <a href="javascript:;" id="btn-logout">
                     <i class="iconfont icon-tuichu"></i>
                     退出
                 </a>
@@ -39,10 +40,16 @@
 
     <div class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
+            <div href="javascript:;" class="userinfo">
+                <img src="//tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg"
+                     class="layui-nav-img">
+                <span class="text-avatar">A</span>
+                <span>欢迎  <span class="welcome">****</span></span>
+            </div>
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
             <ul class="layui-nav layui-nav-tree" lay-shrink="all">
                 <li class="layui-nav-item layui-this">
-                    <a class="" href="home/dashboard.html" target="iframe"><span
+                    <a class="" href="home/dashboard.html" target="index"><span
                             class="iconfont icon-home"></span>首页</a>
                 </li>
                 <li class="layui-nav-item">
@@ -66,13 +73,16 @@
     </div>
     <!--    内容主体部分-->
     <div class="layui-body">
-        <iframe name="iframe" src="home/dashboard.html" frameborder="0"></iframe>
+        <iframe name="index" src="home/dashboard.html" frameborder="0"></iframe>
     </div>
     <!-- 底部固定区域 -->
     <div class="layui-footer">
         @www.BreakingNews.com 大事件文章后台系统
     </div>
 </div>
+<script src="assets/lib/jquery.js"></script>
 <script src="assets/lib/layui/layui.all.js"></script>
+<script src="assets/js/baseAPI.js"></script>
+<script src="assets/js/index.js"></script>
 </body>
 </html>
